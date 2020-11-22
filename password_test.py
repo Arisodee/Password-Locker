@@ -1,5 +1,5 @@
 import unittest # Importing the unittest module
-from password import User # Importing the user class
+from password import User # Importing the user class from password.py
 
 class TestUser(unittest.TestCase):
 
@@ -14,7 +14,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User("Ariso","Okanga") # create a user object
+        self.new_user = User("Arisodee","AbCd*.91") # create a user object
 
 
     def test_init(self):
@@ -22,8 +22,8 @@ class TestUser(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_user.first_name,"Ariso")
-        self.assertEqual(self.new_user.last_name,"Okanga")
+        self.assertEqual(self.new_user.username,"Arisodee")
+        self.assertEqual(self.new_user.password,"AbCd*.91")
 
     def test_save_user(self):
         '''
