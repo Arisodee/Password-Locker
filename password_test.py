@@ -65,6 +65,12 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.save_credential() # saving the new credential
         self.assertEqual(len(Credentials.credentials_list),1)
 
+    def tearDown(self):
+        '''
+        method that does clean up after each test case has run.
+        '''
+        Credentials.credentials_list = []
+
 
     def test_save_multiple_credentials(self):
         '''
@@ -76,11 +82,16 @@ class TestCredentials(unittest.TestCase):
         test_credential.save_credential()
         self.assertEqual(len(Credentials.credentials_list),2)
 
-    def tearDown(self):
+    def test_delete_credential(self):
         '''
-        method that does clean up after each test case has run.
+        test_delete_credential to test if we can remove a credential from our credentials list
         '''
-        Credentials.credentials_list = []
+        self.new_credential.save_credential()
+        test_credential = Credentials("Twitter","_ariso","PyTh0n3!")  # new credential
+        test_credential.save_credential()
+
+        self.new_credential.delete_credential()# Deleting a credential object
+        self.assertEqual(len(Credentials.credentials_list),1)  
 
 
 
