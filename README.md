@@ -9,7 +9,7 @@ This application helps users manage the passwords for various accounts they own 
 
 ## Installation / Setup instructions
 
-#### Install:
+#### Installations needed to run the application
 * python3.6
 * pyperclip
 * pip
