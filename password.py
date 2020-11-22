@@ -19,3 +19,18 @@ class User:
         A method that adds and saves a new user instance to the user list
         """
         User.user_list.append(self)
+
+class Credentials(User):
+    """
+    Class that generates new instance of credentials
+    """
+    credentials_list = []
+
+    def __init__(self,account,user_name, password):
+
+        """
+        method that defines user credentials to be stored
+        """
+        self.account = account
+        self.user_name = user_name
+        self.password = password
