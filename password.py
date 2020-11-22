@@ -42,3 +42,11 @@ class Credentials(User):
         '''
 
         Credentials.credentials_list.append(self)
+
+#    def delete_credential(self):
+
+#         '''
+#         delete_credential method deletes a saved credential from the credentials_list
+#         '''
+
+#         Credentials.credentials_list.remove(self)
