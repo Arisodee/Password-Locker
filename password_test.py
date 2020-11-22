@@ -1,10 +1,11 @@
 import unittest # Importing the unittest module
 from password import User # Importing the user class from password.py
+from password import Credentials # Importing the Credentials class from password.py
 
 class TestUser(unittest.TestCase):
 
     '''
-    Test class that defines test cases for the contact class behaviours.
+    Test class that defines test cases for the user class behaviours.
 
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
@@ -32,6 +33,30 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user() # saving the new user
         self.assertEqual(len(User.user_list),1)
+
+class TestCredentials(unittest.TestCase):
+    '''
+    Test class that defines test cases for the credentials class behaviours.
+
+    Args:
+        unittest.TestCase: TestCase class that helps in creating test cases
+    '''
+
+    def setUp(self):
+        """
+       Set up method to run before each credentials test cases run.
+
+        """
+        self.new_credential = Credentials('Instagram','_ariso','Jeshb*.3')
+
+    # def test_init(self):
+    #     """
+    #     test_init test case to test if a new Credentials instance has been initialized correctly
+    #     """
+    #     self.assertEqual(self.new_credential.account,'Gmail')
+    #     self.assertEqual(self.new_credential.userName,'Owiti_Charles')
+    #     self.assertEqual(self.new_credential.password,'yx5Gij43')
+
 
 
 if __name__ == '__main__':
