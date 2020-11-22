@@ -13,3 +13,9 @@ class User:
         """
         self.first_name = first_name
         self.last_name = last_name
+
+    def save_user(self): 
+        """
+        A method that adds and saves a new user instance to the user list
+        """
+        User.user_list.append(self)
