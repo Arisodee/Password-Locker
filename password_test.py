@@ -1,6 +1,7 @@
 import unittest # Importing the unittest module
 from password import User # Importing the user class from password.py
 from password import Credentials # Importing the Credentials class from password.py
+import pyperclip
 
 class TestUser(unittest.TestCase):
 
@@ -125,10 +126,6 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
-    
-
-
-
 
 if __name__ == '__main__':
     unittest.main()
