@@ -24,6 +24,17 @@ class User:
         """
         User.user_list.append(self)
 
+    @classmethod
+    def verify_user(cls,username, password):
+        """
+        method to verify whether the user exists in the user_list
+        """
+        a_user = ""
+        for user in User.user_list:
+            if(user.username == username and user.password == password):
+                    a_user == user.username
+        return a_user
+
 class Credentials(User):
     """
     Class that generates new instance of credentials
@@ -102,5 +113,5 @@ class Credentials(User):
         '''
         Generate a random password consisting of letters, digits and special characters
         '''
-        password_characters = string.ascii_uppercase + string.ascii_lowercase + string.digits + "@!&~#$^%*"
-        return ''.join(random.choice(password_characters) for x in range(1,9))
+        password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "@!&~#$^%*"
+        return ''.join(random.choice(password) for i in range(1,9))
